@@ -33,20 +33,21 @@ class mainView: UIView {
     
     
     func configure() {
-        backgroundColor = UIColor(patternImage: UIImage(named: "back")!)
+        //backgroundColor = UIColor(patternImage: UIImage(named: "sky")!)
+        layer.contents = UIImage(named: "sky")!.cgImage
         
         
         //Weather Label
         nameLabel.text = "WEATHER"
         nameLabel.font = .systemFont(ofSize: 50.0, weight: .semibold)
-        nameLabel.textColor = .white
+        nameLabel.textColor = #colorLiteral(red: 0.05882352963, green: 0.180392161, blue: 0.2470588237, alpha: 1)
         nameLabel.textAlignment = .center
         
         
         //City Label
         cityLabel.text = "City: "
         cityLabel.font = .systemFont(ofSize: 25.0, weight: .medium)
-        cityLabel.textColor = .white
+        cityLabel.textColor = #colorLiteral(red: 0.05882352963, green: 0.180392161, blue: 0.2470588237, alpha: 1)
         cityLabel.textAlignment = .center
         
         
@@ -57,13 +58,13 @@ class mainView: UIView {
         //Days Label
         daysLabel.text = "Days: "
         daysLabel.font = .systemFont(ofSize: 25.0, weight: .medium)
-        daysLabel.textColor = .white
+        daysLabel.textColor = #colorLiteral(red: 0.05882352963, green: 0.180392161, blue: 0.2470588237, alpha: 1)
         daysLabel.textAlignment = .center
         
         
         //Days TextField
         
-        daysInput.backgroundColor = #colorLiteral(red: 0.1764705926, green: 0.4980392158, blue: 0.7568627596, alpha: 0.3521243579)
+        daysInput.backgroundColor = #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 0.148624786)
         daysInput.borderStyle = .roundedRect
         daysInput.placeholder = "1-16"
         daysInput.textAlignment = .center
@@ -73,6 +74,7 @@ class mainView: UIView {
         //Weather TableView
         resultsTable.register(CustomTableViewCell.self, forCellReuseIdentifier: CustomTableViewCell.identifier)
         resultsTable.backgroundColor = .none
+        resultsTable.showsVerticalScrollIndicator = false
         
     }
     
@@ -132,7 +134,8 @@ class mainView: UIView {
                 resultsTable.centerXAnchor.constraint(equalTo: centerXAnchor),
                 resultsTable.topAnchor.constraint(equalTo: daysInput.topAnchor, constant: 80),
                 resultsTable.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -40),
-                resultsTable.widthAnchor.constraint(equalToConstant: 350)
+                resultsTable.leftAnchor.constraint(equalTo: leftAnchor, constant: 20),
+                resultsTable.rightAnchor.constraint(equalTo: rightAnchor, constant: -20)
             ])
     }
     

@@ -13,8 +13,6 @@ protocol WeatherManagerDelegate {
 }
 
 
-
-
 struct WeatherManager {
     
     let weatherURL =
@@ -69,14 +67,11 @@ struct WeatherManager {
     
     func convertDate(unixStamp: Int) -> String {
         let dateFormat = DateFormatter()
-        dateFormat.dateFormat = "dd.MM.yyyy"
+        dateFormat.dateFormat = "E dd.MM."
         return dateFormat.string(from: Date(timeIntervalSince1970: TimeInterval(unixStamp)))
     }
     
     
-    
-    
-    
-    
+
     
 }

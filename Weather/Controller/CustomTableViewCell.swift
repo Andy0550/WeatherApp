@@ -18,21 +18,22 @@ class CustomTableViewCell: UITableViewCell {
     let dayLabel: UILabel = {
         let dayLabel = UILabel()
         dayLabel.font = .systemFont(ofSize: 20)
-        dayLabel.textColor = .white
+        dayLabel.textColor = .black
        return dayLabel
     }()
     
     let tempLabel: UILabel = {
         let tempLabel = UILabel()
         tempLabel.font = .systemFont(ofSize: 20)
-        tempLabel.textColor = .white
+        tempLabel.textColor = .black
        return tempLabel
     }()
     
         
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        contentView.backgroundColor = #colorLiteral(red: 0.1764705926, green: 0.4980392158, blue: 0.9030795832, alpha: 0.7893835616)
+        backgroundView?.backgroundColor = UIColor.red
+        selectedBackgroundView = backgroundView
         contentView.addSubview(weatherImage)
         contentView.addSubview(dayLabel)
         contentView.addSubview(tempLabel)

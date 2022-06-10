@@ -43,6 +43,9 @@ class ViewController: UIViewController, WeatherManagerDelegate, UIPickerViewData
             
             cell.configure(weather: w)
         }
+        cell.backgroundColor = .clear
+        cell.selectionStyle = .none
+        
         return cell
     }
     
